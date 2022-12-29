@@ -6,3 +6,16 @@ use:
 ```
 go mod download github.com/DengJHeng/speculos_apdu_send
 ```
+
+```go
+package main
+
+import "github.com/DengJHeng/speculos_apdu_send/apdu"
+
+func main(){
+	apduBuffer:=make([]byte,0)
+	apduObj := apdu.NewApdu("http://localhost:5000")
+	// send apdu buffer
+	apduObj.SendMsg(apduBuffer)
+}
+```
